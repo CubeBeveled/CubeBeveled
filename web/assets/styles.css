@@ -54,7 +54,7 @@ dim {
 }
 
 .profile_container {
-  display: inline-block;
+  display: block;
 
   font-size: 120%;
   width: fit-content;
@@ -72,7 +72,7 @@ dim {
 }
 
 .links_container {
-  display: block;
+  display: inline-block;
   background: linear-gradient(to top left, rgb(0, 0, 0), rgb(39, 39, 39));
 
   text-align: left;
