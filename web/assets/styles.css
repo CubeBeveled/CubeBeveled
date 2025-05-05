@@ -43,53 +43,88 @@ dim {
   color: #fff;
 }
 
-.title_container {
+.title_image {
+  width: 7em;
+
+  transition: all, 0.75s;
+}
+
+.title_image:hover {
+  transform: rotate(90deg);
+}
+
+.profile_container {
+  display: inline-block;
+
   font-size: 120%;
   width: fit-content;
+  margin: 15px;
+  padding: 10px;
+
+  /*border-radius doesnt apply
+  border-style: solid;
+  border-color: transparent;
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0.507), black);
+  border-width: 5px;
+  border-image-slice: 1;
+  border-radius: 5px;
+  */
+}
+
+.links_container {
+  display: block;
+  background: linear-gradient(to top left, rgb(0, 0, 0), rgb(39, 39, 39));
+
+  text-align: left;
+  vertical-align: top;
+
+  padding: 10px;
+  margin: 15px;
+
+  border-radius: 5px;
 }
 
 .link_title {
   text-align: left;
+  margin: 0;
+  padding: 0;
   margin-bottom: 12px;
 }
 
 .link_title:hover {
   margin-bottom: 10px;
+
   border-bottom-color: #cacaca;
   border-bottom-style: dashed;
-  border-bottom-width: 2px;
-}
-
-.link_container {
-  text-align: left;
-  margin-left: 40vw;
-
-  padding-left: 5px;
-  border-left-color: #bebebe;
-  border-left-style: solid;
-  border-left-width: 2px;
-}
-
-.github_icon {
-  display: inline-block;
-  width: 3vw;
-  vertical-align: middle;
-  margin: 5px;
-  padding: 0;
+  border-bottom-width: 3px;
 }
 
 .github_container {
-  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(0, 0, 0));
-
-  width: fit-content;
-  padding-right: 10px;
-  border-radius: 10px;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(255, 255, 255, 0));
 }
 
-.bot_container {
+.bot_container,
+.github_container {
   display: flex;
+  width: fit-content;
   align-items: center;
   gap: 5px;
+
+  padding-right: 10px;
+  padding-left: 5px;
+  margin: 10px;
+
+  border-radius: 10px;
+  border-left-color: #bebebe;
+  border-left-style: solid;
+  border-left-width: 3px;
+
+  transition: all, 0.5s;
+}
+
+.bot_container:hover,
+.github_container:hover {
+  transform: translate(5px);
 }
 
 .bot_text {
@@ -99,14 +134,26 @@ dim {
 
 .bot_icon {
   object-fit: cover;
-  width: 3vw;
+  width: 3em;
   margin: 5px;
   padding: 0;
   border-radius: 100%;
+
+  transition: all, 0.5s;
 }
 
-.title_image {
-  width: 7vw;
+.github_icon {
+  width: 3em;
+  margin: 5px;
+  padding: 0;
+
+  display: inline-block;
+  vertical-align: middle;
+  filter: invert(100%);
+}
+
+.bot_icon:hover {
+  filter: invert(100%);
 }
 
 .description {
