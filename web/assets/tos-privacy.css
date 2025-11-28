@@ -1,0 +1,31 @@
+dt {
+  color: white;
+  margin-top: 10px;
+}
+
+.main dt {
+  font-size: x-large;
+}
+
+.contact dt {
+  font-weight: bold;
+}
+
+.contact {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+dd {
+  color: rgb(221, 221, 221);
+  margin-left: 20px;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+ul {
+  padding-left: 10px;
+}
