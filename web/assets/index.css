@@ -84,27 +84,29 @@ dim {
   border-radius: 5px;
 }
 
-.link_title {
+.projects_title {
   text-align: left;
   margin: 0;
   padding: 0;
   margin-bottom: 12px;
 }
 
-.link_title:hover {
-  margin-bottom: 10px;
-
-  border-bottom-color: #cacaca;
-  border-bottom-style: dashed;
-  border-bottom-width: 3px;
-}
-
 .github_container {
   background: linear-gradient(to right, rgb(0, 0, 0), rgba(255, 255, 255, 0));
 }
 
-.bot_container,
-.github_container {
+.github_icon {
+  width: 3em;
+  margin: 5px;
+  padding: 0;
+
+  display: inline-block;
+  vertical-align: middle;
+  filter: invert(100%);
+}
+
+.github_container,
+.project_container {
   display: flex;
   width: fit-content;
   align-items: center;
@@ -122,17 +124,16 @@ dim {
   transition: all, 0.5s;
 }
 
-.bot_container:hover,
-.github_container:hover {
+.project_container:hover {
   transform: translate(5px);
 }
 
-.bot_text {
+.project_text {
   display: flex;
   flex-direction: column;
 }
 
-.bot_icon {
+.project_icon {
   object-fit: cover;
   width: 3em;
   margin: 5px;
@@ -140,16 +141,6 @@ dim {
   border-radius: 100%;
 
   transition: all, 0.5s;
-}
-
-.github_icon {
-  width: 3em;
-  margin: 5px;
-  padding: 0;
-
-  display: inline-block;
-  vertical-align: middle;
-  filter: invert(100%);
 }
 
 .bot_icon:hover {
