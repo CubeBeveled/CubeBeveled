@@ -143,6 +143,10 @@ dim {
   transition: all, 0.5s;
 }
 
+.non_round {
+  border-radius: 0 !important;
+}
+
 .bot_icon:hover {
   filter: invert(100%);
 }
