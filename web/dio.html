@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>che cristiano</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        background-color: black;
+        color: white;
+      }
+
+      h2 {
+        margin: 5px;
+      }
+
+      button {
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border-style: solid;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1 class="bestemmia" id="bestemmia-container">...</h1>
+      <button onclick="bestemmia()"><h2>cristianizzati</h2></button>
+    </center>
+  </body>
+  <script>
+    async function bestemmia() {
+      const res = await fetch(
+        "https://random-word-api.herokuapp.com/word?lang=it",
+      );
+
+      const parola = (await res.json())[0];
+      const divinita = Math.random() > 0.5 ? "dio" : "gesù";
+      const bestemmia = `${divinita} ${parola}`;
+
+      document.title = bestemmia;
+      document.getElementById("bestemmia-container").innerText = bestemmia;
+    }
+  </script>
+</html>
