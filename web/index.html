@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="assets/global.css" />
     <link rel="stylesheet" type="text/css" href="assets/index.css" />
     <link rel="icon" type="image/png" href="assets/round-icon.png" />
 
@@ -9,105 +10,20 @@
   </head>
 
   <body>
-    <center>
-      <div class="profile_container center">
-        <img src="assets/round-icon.png" class="title_image" />
+    <div class="container profile_container">
+      <img src="assets/round-icon.png" class="profile_image" />
+      <div class="profile_text">
         <h1 class="glowing_title">Beveled Cube</h1>
-        <!-- <div class="description">
-        A developer<br>
-        <dim>That's it</dim>
-      </div> -->
+        welcome to my site!
       </div>
 
-      <div class="github_container">
-        <a href="https://github.com/CubeBeveled/" target="_blank">
-          <img src="assets/github.svg" class="github_icon" />
-          <strong>CubeBeveled</strong>
-        </a>
-      </div>
+      <div class="socials_container" id="socials_container"></div>
+    </div>
 
-      <div class="links_container">
-        <h1 class="title projects_title">Projects</h1>
-
-        <a href="https://top.gg/bot/1086580917608402984" target="_blank">
-          <div class="project_container">
-            <img src="assets/bevel.png" class="project_icon bot_icon" />
-            <div class="project_text">
-              <strong>Bevel bot</strong>
-              <dim>Discord chatbridge bot</dim>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://top.gg/bot/1229139305109393621" target="_blank">
-          <div class="project_container">
-            <img
-              src="assets/toolbox.png"
-              class="project_icon"
-              style="
-                transform: scale(1.5);
-                object-fit: cover;
-                object-position: center;
-              "
-            />
-            <div class="project_text">
-              <strong>Toolbox</strong>
-              <dim>Discord utility bot</dim>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://stoat.chat/bot/01JXG6Z0V7TZ774ZW4YP8PWP7M"
-          target="_blank"
-        >
-          <div class="project_container">
-            <img src="assets/statbot.png" class="project_icon" />
-            <div class="project_text">
-              <strong>Statbot</strong>
-              <dim>Stoat statbot</dim>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://nihilium.org/" target="_blank">
-          <div class="project_container">
-            <img src="assets/nihilium.webp" class="project_icon" />
-            <div class="project_text">
-              <strong>Nihilium</strong>
-              <dim>Minecraft server</dim>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://summerhosts.netlify.app/" target="_blank">
-          <div class="project_container">
-            <img src="assets/summerhosts.svg" class="project_icon" />
-            <div class="project_text">
-              <strong>Summerhosts</strong>
-              <dim>A wiki built with vitepresss</dim>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://docs.google.com/spreadsheets/d/1mHcko0kQm6hrqc5qdOX2V1T4Gf5lowJV2nh5hN4nPPo/"
-          target="_blank"
-        >
-          <div class="project_container">
-            <img
-              src="assets/sheets.png"
-              class="project_icon non_round"
-              style="width: 2.5em"
-            />
-            <div class="project_text">
-              <strong>6b6t stats</strong>
-              <dim>Google spreadsheet with stats about 6b6t</dim>
-            </div>
-          </div>
-        </a>
-      </div>
-    </center>
+    <div class="container projects_supercontainer">
+      <h1 class="title projects_title">Projects</h1>
+      <div id="projects_container"></div>
+    </div>
   </body>
 
   <script>
@@ -119,4 +35,137 @@
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    const socials = [
+      {
+        name: "Disroot Git",
+        description: "BeveledCube",
+        target: "https://git.disroot.org/BeveledCube/",
+        icon: "assets/disroot.png",
+        additionalImageClasses: [],
+      },
+      {
+        name: "GitHub",
+        description: "CubeBeveled",
+        target: "https://github.com/CubeBeveled/",
+        icon: "assets/github.svg",
+        additionalImageClasses: [],
+      },
+    ];
+
+    const projects = [
+      {
+        name: "Bevel bot",
+        description: "Discord chatbridge and stats bot",
+        target: "https://top.gg/bot/1086580917608402984",
+        image: "assets/bevel.png",
+        additionalImageClasses: ["bevel_icon"],
+      },
+      {
+        name: "Toolbox",
+        description: "Discord utility bot",
+        target: "https://top.gg/bot/1229139305109393621",
+        image: "assets/toolbox.png",
+        additionalImageClasses: ["toolbox_icon"],
+      },
+      {
+        name: "Statbot",
+        description: "Stoat statbot",
+        target: "https://stoat.chat/bot/01JXG6Z0V7TZ774ZW4YP8PWP7M",
+        image: "assets/statbot.png",
+        additionalImageClasses: [],
+      },
+      {
+        name: "Nihilium",
+        description: "Minecraft server",
+        target: "https://nihilium.org/",
+        image: "assets/nihilium.webp",
+        additionalImageClasses: [],
+      },
+      {
+        name: "Summerhosts",
+        description: "A wiki built with vitepress",
+        target: "https://summerhosts.netlify.app/",
+        image: "assets/summerhosts.svg",
+        additionalImageClasses: [],
+      },
+      {
+        name: "6b6t stats",
+        description: "Google spreadsheet with stats from 6b6t",
+        target:
+          "https://docs.google.com/spreadsheets/d/1mHcko0kQm6hrqc5qdOX2V1T4Gf5lowJV2nh5hN4nPPo/",
+        image: "assets/sheets.png",
+        additionalImageClasses: ["sixbee_stats_icon", "non_round_icon"],
+      },
+    ];
+
+    const socialsContainer = document.getElementById("socials_container");
+    socials.forEach((s) => {
+      const socialElement = document.createElement("a");
+      socialElement.href = s.target;
+      socialElement.target = "_blank";
+      socialElement.classList.add("social_container");
+
+      // Create & style the image
+      const socialImageElement = document.createElement("img");
+      socialImageElement.src = s.icon;
+      socialImageElement.classList.add("social_icon");
+
+      s.additionalImageClasses.forEach((c) =>
+        socialImageElement.classList.add(c),
+      );
+
+      // Create the text element and its children
+      const socialTextElement = document.createElement("div");
+      socialTextElement.classList.add("social_text");
+
+      const projectTitleElement = document.createElement("strong");
+      projectTitleElement.innerText = s.name;
+
+      const projectDescriptionElement = document.createElement("dim");
+      projectDescriptionElement.innerText = s.description;
+
+      socialTextElement.appendChild(projectTitleElement);
+      socialTextElement.appendChild(projectDescriptionElement);
+
+      socialElement.appendChild(socialImageElement);
+      socialElement.appendChild(socialTextElement);
+      socialsContainer.appendChild(socialElement);
+    });
+
+    const projectsContainer = document.getElementById("projects_container");
+    projects.forEach((p) => {
+      const projectElement = document.createElement("a");
+
+      projectElement.href = p.target;
+      projectElement.target = "_blank";
+      projectElement.classList.add("project_container");
+
+      // Create & style the image
+      const projectImageElement = document.createElement("img");
+      projectImageElement.src = p.image;
+      projectImageElement.classList.add("project_icon");
+
+      p.additionalImageClasses.forEach((c) =>
+        projectImageElement.classList.add(c),
+      );
+
+      // Create the text element and its children
+      const projectTextElement = document.createElement("div");
+      projectTextElement.classList.add("project_text");
+
+      const projectTitleElement = document.createElement("strong");
+      projectTitleElement.innerText = p.name;
+
+      const projectDescriptionElement = document.createElement("dim");
+      projectDescriptionElement.innerText = p.description;
+
+      projectTextElement.appendChild(projectTitleElement);
+      projectTextElement.appendChild(projectDescriptionElement);
+
+      projectElement.appendChild(projectImageElement);
+      projectElement.appendChild(projectTextElement);
+      projectsContainer.appendChild(projectElement);
+    });
+  </script>
 </html>

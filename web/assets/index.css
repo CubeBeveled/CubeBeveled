@@ -1,114 +1,45 @@
-a {
-  text-decoration: none;
-  color: white;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  margin: 0;
-  width: fit-content;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  color: rgb(241, 241, 241);
-  background-color: rgb(12, 12, 12);
-}
-
-strong {
-  margin: 0;
-}
-
-dim {
-  color: rgb(167, 167, 167);
-  font-size: small;
-}
-
-.center {
-  align-content: center;
-  text-align: center;
-  align-self: center;
+.profile_container {
+  flex-direction: column;
   align-items: center;
 }
 
-.glowing_title {
-  margin-top: 2vh;
-  color: #fff;
-  text-shadow: rgb(216, 216, 216) 1px 0 10px;
-}
-
-.title {
-  margin-top: 2vh;
-  color: #fff;
-}
-
-.title_image {
+.profile_image {
   width: 7em;
+  object-fit: contain;
 
   transition: all, 0.75s;
 }
 
-.title_image:hover {
+.profile_image:hover {
   transform: rotate(90deg);
 }
 
-.profile_container {
-  display: block;
+.profile_text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
-  font-size: 120%;
-  width: fit-content;
-  margin: 15px;
-  padding: 10px;
-
-  /*border-radius doesnt apply
-  border-style: solid;
-  border-color: transparent;
-  border-image: linear-gradient(to right, rgba(255, 255, 255, 0.507), black);
-  border-width: 5px;
-  border-image-slice: 1;
-  border-radius: 5px;
-  */
+  color: #dadada;
 }
 
-.links_container {
-  display: inline-block;
-  background: linear-gradient(to top left, rgb(0, 0, 0), rgb(39, 39, 39));
-
-  text-align: left;
-  vertical-align: top;
-
-  padding: 10px;
-  margin: 15px;
-
-  border-radius: 5px;
-}
-
-.projects_title {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 12px;
-}
-
-.github_container {
-  background: linear-gradient(to right, rgb(0, 0, 0), rgba(255, 255, 255, 0));
-}
-
-.github_icon {
+.social_icon {
   width: 3em;
-  margin: 5px;
+  margin: 10px;
   padding: 0;
 
   display: inline-block;
   vertical-align: middle;
-  filter: invert(100%);
 }
 
-.github_container,
-.project_container {
+.social_text {
   display: flex;
-  width: fit-content;
+  flex-direction: column;
+}
+
+.social_container,
+.project_container {
+  display: inline-flex;
+  min-width: 200px;
   align-items: center;
   gap: 5px;
 
@@ -116,16 +47,45 @@ dim {
   padding-left: 5px;
   margin: 10px;
 
-  border-radius: 10px;
-  border-left-color: #bebebe;
-  border-left-style: solid;
-  border-left-width: 3px;
+  border-bottom-color: #ffffff00;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
 
-  transition: all, 0.5s;
+  transition: all, 0.3s;
+}
+
+.social_container {
+  border-color: #ffffff00;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.social_container:hover {
+  border-color: #dadada40;
 }
 
 .project_container:hover {
-  transform: translate(5px);
+  border-bottom-color: #ffffff;
+}
+
+.projects_supercontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: left;
+  vertical-align: top;
+
+  padding: 10px;
+  margin: 15px;
+  max-width: 60%;
+}
+
+.projects_title {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
 }
 
 .project_text {
@@ -143,12 +103,22 @@ dim {
   transition: all, 0.5s;
 }
 
-.non_round {
+.non_round_icon {
   border-radius: 0 !important;
 }
 
-.bot_icon:hover {
+.bevel_icon:hover {
   filter: invert(100%);
+}
+
+.toolbox_icon {
+  transform: scale(1.5);
+  object-fit: cover;
+  object-position: center;
+}
+
+.sixbee_stats_icon {
+  width: 2.5em;
 }
 
 .description {
