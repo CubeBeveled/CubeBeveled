@@ -3,6 +3,10 @@ dt {
   margin-top: 10px;
 }
 
+.main {
+  max-width: 80%;
+}
+
 .main dt {
   font-size: x-large;
 }
