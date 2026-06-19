@@ -107,7 +107,7 @@
   border-radius: 0 !important;
 }
 
-.bevel_icon:hover {
+.overseer_icon:hover {
   filter: invert(100%);
 }
 
