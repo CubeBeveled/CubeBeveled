@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Random "tools" and cool stuff</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+
+        height: 100vh;
+        width: 100vw;
+
+        margin: 0;
+        padding: 0;
+
+        background-color: black;
+        color: white;
+      }
+
+      h2 {
+        margin: 5px;
+      }
+
+      button {
+        cursor: pointer;
+        color: white;
+        background-color: transparent;
+        border-style: solid;
+        padding: 0;
+        color: rgb(red, green, blue);
+      }
+
+      .input-color-container {
+        display: flex;
+        align-content: center;
+      }
+
+      .input-color-container input {
+        height: 1.5em;
+        margin: 5px;
+
+        color: white;
+
+        background-color: black;
+        border-style: solid;
+        border-color: rgb(254, 254, 254);
+      }
+
+      #color-display {
+        display: flex;
+
+        height: 4em;
+        width: 4em;
+
+        cursor: pointer;
+
+        color: white;
+        mix-blend-mode: difference;
+
+        justify-content: center;
+        text-align: center;
+
+        border-style: solid;
+        border-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 class="name">Text to color</h1>
+
+      <div class="input-color-container">
+        <input type="text" id="text-color" alt="Write stuff idk" />
+        <div id="color-display"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/makeCopyButton.js"></script>
+  <script>
+    function stringToRGB(str) {
+      const charMap = {
+        red00: [
+          "a",
+          "d",
+          "g",
+          "j",
+          "m",
+          "p",
+          "s",
+          "v",
+          "y",
+          "1",
+          "4",
+          "7",
+          "_",
+        ],
+        green: ["b", "e", "h", "k", "n", "q", "t", "w", "z", "2", "5", "8"],
+        blue0: ["c", "f", "i", "l", "o", "r", "u", "x", "0", "3", "6", "9"],
+      };
+
+      let red = 0;
+      let green = 0;
+      let blue = 0;
+
+      for (const char of str) {
+        if (charMap.red00.includes(char.toLowerCase())) red++;
+        if (charMap.green.includes(char.toLowerCase())) green++;
+        if (charMap.blue0.includes(char.toLowerCase())) blue++;
+      }
+
+      // old color : len(str) = x : 255
+
+      red = (255 * red) / str.length;
+      green = (255 * green) / str.length;
+      blue = (255 * blue) / str.length;
+
+      return [red, green, blue];
+    }
+
+    const textColorInput = document.getElementById("text-color");
+    const colorDisplay = document.getElementById("color-display");
+    let currentColor = "rgb(0,0,0)";
+
+    textColorInput.addEventListener("input", (event) => {
+      const currentInput = event.target.value;
+
+      if (currentInput == "") currentColor = "rgb(0,0,0)";
+      else currentColor = `rgb(${stringToRGB(currentInput).join(",")})`;
+
+      colorDisplay.style.backgroundColor = currentColor;
+    });
+
+    colorDisplay.addEventListener("click", function () {
+      navigator.clipboard.writeText(currentColor).then(function () {
+        colorDisplay.textContent = "copied RGB";
+
+        setTimeout(() => {
+          colorDisplay.textContent = "";
+        }, 2000);
+      });
+    });
+  </script>
+</html>
