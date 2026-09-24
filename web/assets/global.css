@@ -3,9 +3,11 @@ body {
   flex-direction: column;
   align-items: center;
 
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   margin: 0;
+  padding: 1em;
 
   font-family: Arial, sans-serif;
   color: rgb(241, 241, 241);
@@ -14,7 +16,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(154, 226, 255);
   margin: 0;
   padding: 0;
 }
@@ -51,17 +53,27 @@ dim {
   color: #fff;
 }
 
-.container {
-  display: flex;
-
-  font-size: 120%;
-  width: fit-content;
-  margin: 15px;
-  padding: 10px;
-
+.outline {
   border-style: solid;
   border-color: rgba(155, 155, 155, 0.464);
   border-width: 3px;
   border-image-slice: 1;
   border-radius: 0;
+}
+
+.short-code {
+  background-color: rgb(55, 55, 55);
+  border-radius: 10px;
+
+  font-family: monospace;
+  font-size: 110%;
+
+  padding: 0.3em;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+
+.inline-icon {
+  vertical-align: middle;
+  height: 1.2em;
 }
